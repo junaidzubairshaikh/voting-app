@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello git'){
             steps {
-                echo 'Hello git'
+                echo "$GIT_BRANCH"
             }
         }
     }
