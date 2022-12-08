@@ -7,5 +7,10 @@ pipeline {
                 echo "$GIT_BRANCH"
             }
         }
+         stage('Hello git'){
+            steps {
+                sh node version
+            }
+        }
     }
 }
