@@ -7,7 +7,7 @@ pipeline {
                 echo "$GIT_BRANCH"
             }
         }
-         stage('Hello git'){
+         stage('Install modules'){
             steps {
                 sh (script: """ 
                     node version
