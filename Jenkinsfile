@@ -9,7 +9,11 @@ pipeline {
         }
          stage('Hello git'){
             steps {
-                sh node version
+                sh (script: """ 
+                    node version
+                    npm install
+                    """
+                )
             }
         }
     }
