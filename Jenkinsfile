@@ -9,7 +9,7 @@ pipeline {
         }
          stage('Install modules'){
             steps {
-                pwsh(script: """ 
+                powershell(script: """ 
                     node version
                     npm install
                     """
