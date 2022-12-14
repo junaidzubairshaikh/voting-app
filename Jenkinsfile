@@ -10,7 +10,7 @@ pipeline {
          stage('Install modules'){
             steps {
                 powershell(script: """ 
-                    node version
+                    node --version
                     npm install
                     """
                 )
