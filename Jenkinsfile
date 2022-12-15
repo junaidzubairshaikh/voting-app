@@ -4,9 +4,9 @@ pipeline {
         isAdmin = "${isAdmin}"
     }
     stages {
-        stage('Hello git'){
+        stage('Logs env variables'){
             steps {
-                echo "$GIT_BRANCH"
+                echo "${isAdmin}"
             }
         }
         stage('Say something '){
