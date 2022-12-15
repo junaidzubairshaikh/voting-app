@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    
+    environment {
+        isAdmin = "${isAdmin}"
+    }
     stages {
         stage('Hello git'){
             steps {

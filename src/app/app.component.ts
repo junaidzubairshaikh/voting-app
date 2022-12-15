@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'voting-app';
+  constructor() {
+    this.title= process.env['isAdmin']?'Admin app':'client app'; 
+  }
 }
