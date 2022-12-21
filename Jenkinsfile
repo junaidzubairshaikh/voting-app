@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        isAdmin = "${isAdmin}"
+        NG_APP_IS_ADMIN = "${isAdmin}"
     }
     stages {
         stage('Logs env variables'){
