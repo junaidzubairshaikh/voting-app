@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/assets/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'voting-app';
   constructor() {
-    this.title= process.env['isAdmin']?'Admin app':'client app'; 
+    this.title= environment.isAdmin==='true' ? 'This is an admin app':' Client app running';
   }
 }
