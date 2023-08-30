@@ -1,0 +1,116 @@
+
+
+.input-container {
+    input{
+        border-bottom:4px solid orange;
+        border-radius: 5px;
+        font-size: 24px;
+        width: 240px;
+        height: 50px;
+        padding-left: 2rem;
+        &::placeholder {
+            padding-left: 12px;
+        }
+
+        &:focus {
+            background-color: aqua;
+            &::after {
+                width: 100%;
+            }
+        }
+
+        &::after {
+            content: "";
+            // position: absolute;
+            // top: 50%;
+            // left: 50%;
+            display: block;
+            width: 100px;
+            height: 2px;
+            margin-left: 12px;
+            transition: width 0.3s;
+            border-left: 1px solid orange;
+            border-bottom: 1px solid orange;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// write css for toggle switch with html.
+
+// <div class="toggle-switch">
+//   <input type="checkbox" id="toggle-input" />
+//   <label for="toggle-input" class="toggle-switch-label">
+//     <span class="toggle-switch-inner"></span>
+//     <span class="toggle-switch-switch"></span>
+//   </label>
+// </div>
+
+/* Toggle Switch Styling */
+.toggle-switch {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  display: inline-block;
+}
+
+.toggle-switch-label {
+  position: relative;
+  display: block;
+  width: 70px;
+  height: 34px;
+  background: #bdbdbd;
+  border-radius: 34px;
+  transition: background 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.toggle-switch-inner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  top: 2px;
+  left: 2px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.toggle-switch-switch {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 2px;
+  right: 2px;
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+#toggle-input:checked + .toggle-switch-label {
+  background: #4db6ac;
+}
+
+#toggle-input:checked + .toggle-switch-label .toggle-switch-inner {
+  left: 36px;
+}
+
+#toggle-input:checked + .toggle-switch-label .toggle-switch-switch {
+  right: 36px;
+}

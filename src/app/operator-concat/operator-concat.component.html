@@ -1,0 +1,48 @@
+<div>
+    <h1>Order some product</h1>
+    <div>
+        <button (click)="_order.next({id:1})">Order 1</button>
+        <button (click)="_order.next({id:2})">Order 2</button>
+        <button (click)="_order.next({id:3})">Order 3</button>
+        <button (click)="processProgressNow()">Process Progress</button>
+    </div>
+    <hr>
+</div>
+
+<div>
+    <!-- <div [style.width.%]="_progress$ | async" class="progress">
+
+    </div> -->
+
+    <div [style.width.%]="_progress2$ | async" class="progress-async" >
+
+    </div>
+    <!-- <button (click)="_addPotato.next('potato')"> Add Potato</button>
+    
+    <button (click)="_addTomato.next('tomato')"> Add Tomato</button>
+    <div>
+
+        <ng-container *ngIf="_delivery | async as product">
+            <h1>
+                Enjoy your shawarma
+            </h1>
+        </ng-container>
+    </div> -->
+</div>
+
+<ng-container>
+    <div>
+        <div>
+          {{count | async }}
+        </div>
+        <app-styling-div></app-styling-div>
+        <app-child-recursive [depth]="3"></app-child-recursive>
+        <app-operators-example></app-operators-example>
+      </div>
+      <p>What do you want to do next with your app?</p>
+    
+      <div class="input-container">
+        <input type="text">
+      </div>
+      <input type="hidden" #selection>
+</ng-container>

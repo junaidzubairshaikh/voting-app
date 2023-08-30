@@ -1,0 +1,21 @@
+<div>
+    <h1>Order some product</h1>
+    <div>
+        <button (click)="orderSomeProdcut()">Order prodcut</button>
+    </div>
+    <hr>
+</div>
+
+<div>
+    <button (click)="_addPotato.next('potato')"> Add Potato</button>
+    
+    <button (click)="_addTomato.next('tomato')"> Add Tomato</button>
+    <div>
+
+        <ng-container *ngIf="_delivery | async as product">
+            <h1>
+                Enjoy your shawarma
+            </h1>
+        </ng-container>
+    </div>
+</div>

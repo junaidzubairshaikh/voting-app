@@ -1,0 +1,14 @@
+<div>
+
+    <h1>I am recursive</h1>
+</div>
+<ng-container *ngIf="depth>1">
+    <app-child-recursive [depth]="depth-1"></app-child-recursive>
+
+    <ng-container class="styling-div">
+        <div class="container-block">
+            
+            <div class="smaller-arror-pointing-righ"></div>
+        </div>
+    </ng-container>
+</ng-container>

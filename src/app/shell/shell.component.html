@@ -1,0 +1,9 @@
+<div class="shell-container ">
+        <div class="nav-container"></div>
+
+        <div class="content-main">
+            <ng-container *ngIf="observ | async as obj">
+                {{obj | json}}
+            </ng-container>
+        </div>
+</div>
