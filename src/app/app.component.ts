@@ -12,10 +12,12 @@ import { VotingService } from './voting.service';
 })
 export class AppComponent {
   title = 'voting-app';
-  
-  count = interval(2000).pipe(filter(x=>x<10),last(), map(x=>x+2));
-  constructor ( @Inject(DOCUMENT) private  docuemt: Document) {
-    this.title= environment.isAdmin==='true' ? 'This is an admin app':' Client app running';
+  variableEnv: string = '';
+
+  count = interval(2000).pipe(filter(x => x < 10), last(), map(x => x + 2));
+  constructor(@Inject(DOCUMENT) private docuemt: Document) {
+    this.title = environment.isAdmin === 'true' ? 'This is an admin app' : ' Client app running';
+    this.variableEnv = environment.isAdmin;
     // this.myServie.getData$.subscribe((x)=>{
     //   console.log('value are emitting');
     // });
