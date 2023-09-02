@@ -6,11 +6,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TruckLoadService {
 
-  private url:string = '/message'
+  private url:string = 'api/'
   constructor(private http: HttpClient) { }
 
 
   getAllMessage(){
-    return this.http.get(this.url);
+    return this.http.get(`${this.url}message1`);
+  }
+
+  getAllAssets(){
+    return this.http.get(`${this.url}getAssets`);
   }
 }
