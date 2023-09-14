@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "start:swa":"swa start ./dist/voting-app --api-location ./api --verbose=silly",
     "start": "ng serve --proxy-config proxy.conf.json",
     "say": "echo 'say something'",
     "build": "ng build",

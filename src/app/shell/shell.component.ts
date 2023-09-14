@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TruckLoadService } from '../services/truck-load.service';
-import { Observable } from 'rxjs';
+import { Observable, combineLatestWith, map } from 'rxjs';
 
 @Component({
   selector: 'app-shell',
@@ -10,17 +10,20 @@ import { Observable } from 'rxjs';
 export class ShellComponent implements OnInit {
 
   observ!: Observable<any>
-  
-  constructor(public messageService: TruckLoadService){}
+
+  constructor(public messageService: TruckLoadService) { }
 
   ngOnInit(): void {
-    debugger
-    this.observ = this.messageService.getAllMessage();
-    this.getMessages();
+    this.observ = this.messageService.getAllMessage().pipe(
+      combineLatestWith(this.messageService.getAllAssets())
+    ).pipe(
+      map(([x,y]:[any,any])=>x)
+    )
+    // this.getMessages();
   }
 
   getMessages(): void {
-    this.messageService.getAllMessage().subscribe((res)=>{
+    this.messageService.getAllMessage().subscribe((res) => {
       // console.log(mess)
     })
   }
